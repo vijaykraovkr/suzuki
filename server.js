@@ -25,15 +25,11 @@ mongoose.connect(dbConfig.url, {useNewUrlParser: true, useUnifiedTopology: true}
     process.exit();
 });
 
-// define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome!!!"});
 });
-
-// require('./app/routes/note.routes.js')(app);
 require('./app/routes/routes.js')(app);
-
 // listen for requests
 app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+    // console.log("Server is listening on port 3000");
 });
